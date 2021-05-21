@@ -1,0 +1,49 @@
+<table>
+    
+
+    <td id="b1"> 
+        <div class="col-auto">
+        
+            <tr *ngFor="let item of Lista1"> 
+                <td class="btn btn-primary mb-3">
+                    <p id="ti">{{item.titulo}}</p>
+                    <p id="des">{{item.descripcion}}</p>
+                </td>
+            </tr>
+        </div>
+    </td>   
+
+    <td id="b2"> 
+        <div class="col-auto">
+           
+            <tr *ngFor="let item of Lista2"> 
+                <td><a [routerLink]="['/editar']" routerLinkActive="router-link-active" class="btn btn-primary mb-3">
+                    <p id="ti">{{item.titulo}}</p>
+                    <p id="des">{{item.descripcion}}</p>
+                </a>
+                </td>
+                <input type="button" value="X" (click)= "borrar2()" class="btn btn-primary mb-3">
+            </tr>
+            
+        </div>
+    </td>     
+
+    <td id="b3">
+        <div class="col-auto">
+            <tr *ngFor="let item of Lista3"> 
+                <td><a [routerLink]="['/editar']" routerLinkActive="router-link-active" class="btn btn-primary mb-3">
+                    <p id="ti">{{item.titulo}}</p>
+                    <p id="des">{{item.descripcion}}</p>
+                </a></td>
+                <input type="button" value="X" (click)= "borrar3()" class="btn btn-primary mb-3">
+            </tr>
+        </div>
+    </td>   
+</table>
+
+
+<footer>
+    <div class="col-auto">
+        <a [routerLink]="['']" routerLinkActive="router-link-active" ><input type="button" value="+" id="adicionar" class="btn btn-primary mb-3"> adicionar</a>
+    </div>
+</footer>

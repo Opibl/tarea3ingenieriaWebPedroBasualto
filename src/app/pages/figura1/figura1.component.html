@@ -1,0 +1,63 @@
+<form [formGroup]="formulario" (ngSubmit)="Crear()" id="formulario">
+ 
+    <ul>
+      <div class="mb-3">
+        <li>
+            Titulo
+            <br>
+            <input formControlName = "titulo" type="text">
+        </li>
+
+        <span *ngIf="this.formulario.get('titulo')?.errors?.required">
+          <div id = "camp" class="alert alert-primary" role="alert">
+            (campo requerido)
+          </div>
+        </span>
+
+      </div> 
+      <div class="mb-3">
+        <li>
+        Estado
+        <br>
+        <select  formControlName ="estado">
+            <option>select</option>
+            <option>abierto</option>
+            <option>en proceso</option>
+            <option>cerrado</option>
+        </select>
+        
+        <span *ngIf="this.formulario.get('estado')?.errors?.required">
+          <div id = "camp" class="alert alert-primary" role="alert">
+            (campo requerido)
+          </div>
+        </span>
+
+        </li>
+      </div>
+
+      <div class="mb-3">
+        <li>
+            Descripcion
+            <br>
+            <textarea formControlName = "descripcion" maxlength="150"></textarea>
+        </li>
+
+        <span *ngIf="this.formulario.get('descripcion')?.errors?.required">
+          <div id = "camp" class="alert alert-primary" role="alert">
+            (campo requerido)
+          </div>
+        </span>
+
+      </div>
+
+
+      <br>
+      <div class="col-auto">
+        <input type="reset" value="Cancelar" class="btn btn-primary mb-3">
+        <input type="submit" value="Crear"   class="btn btn-primary mb-3" [disabled] = "formulario.invalid">
+        <a [routerLink]="['/figura2']" routerLinkActive="router-link-active" ><input type="button" value="ver notas" class="btn btn-primary mb-3"></a>
+      </div>
+
+     
+    </ul>  
+</form>  
